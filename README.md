@@ -22,9 +22,9 @@ MOJOKERTO (Sebagai DNS Slave Server) <br>
 <img width="367" alt="mojokerto" src="https://user-images.githubusercontent.com/26424136/99187018-baeb0f00-2786-11eb-825c-f110054fa002.PNG"> <br>
 PROBOLINGGO  (Sebagai Web Server) <br>
 <img width="366" alt="probolinggo" src="https://user-images.githubusercontent.com/26424136/99187021-bcb4d280-2786-11eb-988b-dd3dee8a965b.PNG"> <br>
-GRESIK (Sebagai Klien) <br>
+GRESIK (Sebagai Klien Subnet 1)
 <img width="366" alt="gresik" src="https://user-images.githubusercontent.com/26424136/99187016-ba527880-2786-11eb-9151-ba59475cbad2.PNG"> <br>
-SIDOARJO (Sebagai Klien) <br>
+SIDOARJO (Sebagai Klien Subnet 1)
 <img width="365" alt="sidoarjo" src="https://user-images.githubusercontent.com/26424136/99187022-bd4d6900-2786-11eb-8c69-a2611458bf60.PNG"> <br>
 - Terakhir, membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini:
 <img width="499" alt="bye sh" src="https://user-images.githubusercontent.com/26424136/99186444-ee2b9f00-2782-11eb-93b7-16e69aaf9619.PNG">
