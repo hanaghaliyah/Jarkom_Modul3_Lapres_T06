@@ -34,3 +34,8 @@ Madiun (Sebagai Klien Subnet 3) <br>
 ![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Nomer 1
+# Soal
+Membuat topologi jaringan
+# Penyelesaian
