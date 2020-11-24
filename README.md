@@ -14,19 +14,23 @@ Kelompok T06
 <img width="366" alt="surabaya2" src="https://user-images.githubusercontent.com/26424136/99187024-bde5ff80-2786-11eb-8ef7-2b2c3ca18dae.PNG"> <br>
 Lalu ketikka sysctl -p untuk mengaktifkan perubahan yang ada. Dengan mengaktifkan fungsi IP Forward ini maka Linux nantinya dapat menentukan jalur mana yang dipilih untuk mencapai jaringan tujuan.
 - Setting IP pada setiap UML dengan mengetikkan `nano /etc/network/interfaces` Lalu setting IPnya sebagai berikut: <br>
-SURABAYA (Sebagai Router) <br>
+SURABAYA (Sebagai Router dan DHCP Relay) <br>
 ![sby](https://user-images.githubusercontent.com/61286109/100125231-203daf00-2eaf-11eb-86ac-2a2c03567084.PNG) <br>
-MALANG  (Sebagai DNS Master Server) <br>
-<img width="368" alt="malang" src="https://user-images.githubusercontent.com/26424136/99187017-baeb0f00-2786-11eb-966d-3281c37b1553.PNG"> <br>
-MOJOKERTO (Sebagai DNS Slave Server) <br>
-<img width="367" alt="mojokerto" src="https://user-images.githubusercontent.com/26424136/99187018-baeb0f00-2786-11eb-825c-f110054fa002.PNG"> <br>
-PROBOLINGGO  (Sebagai Web Server) <br>
-<img width="366" alt="probolinggo" src="https://user-images.githubusercontent.com/26424136/99187021-bcb4d280-2786-11eb-988b-dd3dee8a965b.PNG"> <br>
-GRESIK (Sebagai Klien) <br>
-<img width="366" alt="gresik" src="https://user-images.githubusercontent.com/26424136/99187016-ba527880-2786-11eb-9151-ba59475cbad2.PNG"> <br>
-SIDOARJO (Sebagai Klien) <br>
-<img width="365" alt="sidoarjo" src="https://user-images.githubusercontent.com/26424136/99187022-bd4d6900-2786-11eb-8c69-a2611458bf60.PNG"> <br>
+MALANG  (Sebagai DNS Server) <br>
+![mlg](https://user-images.githubusercontent.com/61286109/100125650-95a97f80-2eaf-11eb-8ed5-203b012ed6e8.PNG) <br>
+MOJOKERTO (Sebagai Proxy Server) <br>
+![mjk](https://user-images.githubusercontent.com/61286109/100126705-e2da2100-2eb0-11eb-888e-489aac0122a4.PNG) <br>
+TUBAN  (Sebagai DHCP Server) <br>
+![tbn](https://user-images.githubusercontent.com/61286109/100127201-77dd1a00-2eb1-11eb-943f-a9fc3b429a35.PNG) <br>
+GRESIK (Sebagai Klien Subnet 1) <br>
+![gsk](https://user-images.githubusercontent.com/61286109/100128366-c6d77f00-2eb2-11eb-948c-f99a86d02c47.PNG) <br>
+SIDOARJO (Sebagai Klien Subnet 1) <br>
+![sda](https://user-images.githubusercontent.com/61286109/100131641-e40e4c80-2eb6-11eb-8f37-60bf47db1bde.PNG) <br>
+Banyuawangi (Sebagai Klien Subnet 3) <br>
+![bwi](https://user-images.githubusercontent.com/61286109/100133235-13be5400-2eb9-11eb-93fe-50c42af57252.PNG) <br>
+Madiun (Sebagai Klien Subnet 3) <br>
+![mdi](https://user-images.githubusercontent.com/61286109/100133392-48321000-2eb9-11eb-8143-7b520b3d5338.PNG) <br>
 - Terakhir, membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini:
-<img width="499" alt="bye sh" src="https://user-images.githubusercontent.com/26424136/99186444-ee2b9f00-2782-11eb-93b7-16e69aaf9619.PNG">
+![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
