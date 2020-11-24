@@ -15,7 +15,7 @@ Kelompok T06
 Lalu ketikka sysctl -p untuk mengaktifkan perubahan yang ada. Dengan mengaktifkan fungsi IP Forward ini maka Linux nantinya dapat menentukan jalur mana yang dipilih untuk mencapai jaringan tujuan.
 - Setting IP pada setiap UML dengan mengetikkan `nano /etc/network/interfaces` Lalu setting IPnya sebagai berikut: <br>
 SURABAYA (Sebagai Router) <br>
-<img width="367" alt="surabaya" src="https://user-images.githubusercontent.com/26424136/99187023-bde5ff80-2786-11eb-9782-116a08d8ea0e.PNG"> <br>
+![sby](https://user-images.githubusercontent.com/61286109/100125231-203daf00-2eaf-11eb-86ac-2a2c03567084.PNG) <br>
 MALANG  (Sebagai DNS Master Server) <br>
 <img width="368" alt="malang" src="https://user-images.githubusercontent.com/26424136/99187017-baeb0f00-2786-11eb-966d-3281c37b1553.PNG"> <br>
 MOJOKERTO (Sebagai DNS Slave Server) <br>
