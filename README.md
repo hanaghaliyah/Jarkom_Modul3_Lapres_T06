@@ -36,6 +36,46 @@ Madiun (Sebagai Klien Subnet 3) <br>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Nomer 1
-# Soal
+### Soal
 Membuat topologi jaringan
-# Penyelesaian
+### Penyelesaian
+
+## Nomer 2
+### Soal
+Surabaya mennjadi DHCP Relay
+### Penyelesaian
+
+## Nomer 3
+### Soal
+Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+### Penyelesaian
+
+## Nomer 4
+### Soal
+Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+### Penyelesaian
+
+## Nomer 5
+### Soal
+Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+### Penyelesaian
+
+## Nomer 6
+### Soal
+Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6) client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+### Penyelesaian
+
+## Nomer 7
+### Soal
+User autentikasi milik Anri memiliki format: <b>User: userta_t06 | Password: inipasw0rdta_t06</b>
+### Penyelesaian
+
+## Nomer 1
+### Soal
+Membuat topologi jaringan
+### Penyelesaian
+
+## Nomer 1
+### Soal
+Membuat topologi jaringan
+### Penyelesaian
