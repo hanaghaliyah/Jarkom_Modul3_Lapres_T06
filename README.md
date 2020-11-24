@@ -70,9 +70,9 @@ Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6
 User autentikasi milik Anri memiliki format: <b>User: userta_t06 | Password: inipasw0rdta_t06</b>
 ### Penyelesaian
 
-## Nomer 1
+## Nomer 8
 ### Soal
-Membuat topologi jaringan
+Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ### Penyelesaian
 
 ## Nomer 1
