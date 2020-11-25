@@ -126,6 +126,7 @@ http_access allow USERS
 - Lakukan `service squid3 restart`
 - Ubah pengaturan proxy browser. Gunakan <b>IP MOJOKERTO</b> sebagai host, dan isikan <b>port 8080</b>.
 ### Testing
+![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
 
 ## Nomer 8
 ### Soal
@@ -173,6 +174,10 @@ Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Soal
 Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti gambar berikut:
 ### Penyelesaian
+<img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
+<img width="366" alt="11b" src="https://user-images.githubusercontent.com/26424136/100244780-e8477200-2f69-11eb-84f8-d01a22114306.PNG"> <br>
+### Testing
+![Screenshot (257)](https://user-images.githubusercontent.com/26424136/100244857-001ef600-2f6a-11eb-88fd-f901c9a6bccb.png)
 
 ## Nomer 12
 ### Soal
