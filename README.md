@@ -114,7 +114,24 @@ User autentikasi milik Anri memiliki format: <b>User: userta_t06 | Password: ini
 Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ### Penyelesaian
 
-## Nomer 1
+## Nomer 9
 ### Soal
-Membuat topologi jaringan
+Setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 09.00).
 ### Penyelesaian
+
+## Nomer 10
+### Soal
+Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
+### Penyelesaian
+
+## Nomer 11
+### Soal
+Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti gambar berikut:
+### Penyelesaian
+
+## Nomer 12
+### Soal
+Ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
+### Penyelesaian
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
