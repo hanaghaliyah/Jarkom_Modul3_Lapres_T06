@@ -7,7 +7,10 @@ Kelompok T06
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Persiapan
+## Nomer 1
+### Soal
+Membuat topologi jaringan
+### Penyelesaian
 - Pertama-tama, kami akan melakukan konfigurasi terlebih dahulu pada file <b>topologi.sh</b>
 ![Topologi](https://user-images.githubusercontent.com/61286109/100124518-57f82700-2eae-11eb-817f-011103f5aacb.PNG) <br>
 - Pada router SURABAYA lakukan setting sysctl dengan mengetikkan perintah `nano /etc/sysctl.conf` Dan Hilangkan tanda pagar <b>(#)</b> pada bagian `net.ipv4.ip_forward=1` <br>
@@ -30,19 +33,19 @@ Banyuawangi (Sebagai Klien Subnet 3) <br>
 ![bwi](https://user-images.githubusercontent.com/61286109/100133235-13be5400-2eb9-11eb-93fe-50c42af57252.PNG) <br>
 Madiun (Sebagai Klien Subnet 3) <br>
 ![mdi](https://user-images.githubusercontent.com/61286109/100133392-48321000-2eb9-11eb-8143-7b520b3d5338.PNG) <br>
-- Terakhir, membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini: <br>
-![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Nomer 1
-### Soal
-Membuat topologi jaringan
-### Penyelesaian
+- Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini: <br>
+![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG) <br>
+- Install DHCP Relay di Surabaya <br>
+- Install DHCP Server di Tuban <br>
+![dhcp server](https://user-images.githubusercontent.com/61286109/100180554-f87c3480-2f0a-11eb-8909-0840fc5bcbdf.PNG) <br>
+- Install Bind9 di Malang <br>
+![bind9](https://user-images.githubusercontent.com/61286109/100180643-28c3d300-2f0b-11eb-94f3-fb1c93d63c1c.PNG) <br>
+- Install Squid3 di Mojokerto <br>
+![squid3](https://user-images.githubusercontent.com/61286109/100180916-c6b79d80-2f0b-11eb-9558-d2564bbb913f.PNG) <br>
 
 ## Nomer 2
 ### Soal
-Surabaya mennjadi DHCP Relay
+Surabaya menjadi DHCP Relay
 ### Penyelesaian
 
 ## Nomer 3
