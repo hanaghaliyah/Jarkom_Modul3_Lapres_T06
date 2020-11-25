@@ -52,6 +52,10 @@ Surabaya menjadi DHCP Relay
 ### Soal
 Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
 ### Penyelesaian
+- Buka `nano /etc/default/isc-dhcp-server` kemudian interface nya diganti `eth0` <br>
+![3](https://user-images.githubusercontent.com/61286109/100181594-337f6780-2f0d-11eb-8c6c-5d9c21b89334.PNG) <br>
+- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+![3a](https://user-images.githubusercontent.com/61286109/100182264-c7056800-2f0e-11eb-8341-119991bf7b5f.PNG) <br>
 
 ## Nomer 4
 ### Soal
