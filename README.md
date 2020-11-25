@@ -131,11 +131,38 @@ http_access allow USERS
 ### Soal
 Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ### Penyelesaian
+- Buat file baru `nano /etc/squid3/acl.conf`
+- Tambahkan baris `acl AVAILABLE_WORKING time TW 13:00-18:00`
+- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut:
+```
+include /etc/squid/acl.conf
+
+http_port 8080
+http_access allow AVAILABLE_WORKING
+http_access deny all
+visible_hostname mojokerto
+```
+- - Lakukan `service squid3 restart`
 
 ## Nomer 9
 ### Soal
 Setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 09.00).
 ### Penyelesaian
+- Tambahkan baris pada file `nano /etc/squid3/acl.conf`
+```
+acl AVAILABLE_WORKING time TWH 21:00-24:00
+acl AVAILABLE_WORKING time WHF 00:01-09:00
+```
+- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut jika belum:
+```
+include /etc/squid/acl.conf
+
+http_port 8080
+http_access allow AVAILABLE_WORKING
+http_access deny all
+visible_hostname mojokerto
+```
+- Lakukan `service squid3 restart`
 
 ## Nomer 10
 ### Soal
