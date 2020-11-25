@@ -108,6 +108,24 @@ Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan cl
 ### Soal
 User autentikasi milik Anri memiliki format: <b>User: userta_t06 | Password: inipassw0rdta_t06</b>
 ### Penyelesaian
+- Lakukan `apt-get update` dan install `apache2-utils` pada UML MOJOKERTO.
+- Buat user dan password dengan syntax `htpasswd -c /etc/squid/passwd userta_t06` kemudian masukkan password yang diinginkan.
+- Edit konfigurasi pada `/etc/squid3/squid.conf`
+```
+http_port 8080
+visible_hostname mojokerto
+
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
+auth_param basic children 5
+auth_param basic realm Proxy
+auth_param basic credentialsttl 2 hours
+auth_param basic casesensitive on
+acl USERS proxy_auth REQUIRED
+http_access allow USERS
+```
+- Lakukan `service squid3 restart`
+- Ubah pengaturan proxy browser. Gunakan <b>IP MOJOKERTO</b> sebagai host, dan isikan <b>port 8080</b>.
+### Testing
 
 ## Nomer 8
 ### Soal
