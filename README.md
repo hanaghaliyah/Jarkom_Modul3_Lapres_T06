@@ -55,12 +55,28 @@ Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100
 - Buka `nano /etc/default/isc-dhcp-server` kemudian interface nya diganti `eth0` <br>
 ![3](https://user-images.githubusercontent.com/61286109/100181594-337f6780-2f0d-11eb-8c6c-5d9c21b89334.PNG) <br>
 - Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
-![3a](https://user-images.githubusercontent.com/61286109/100182264-c7056800-2f0e-11eb-8341-119991bf7b5f.PNG) <br>
+![3a](https://user-images.githubusercontent.com/61286109/100183790-6f68fb80-2f12-11eb-9336-757446170d60.PNG) <br>
+- Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
+### Testing
+- Jalankan ifconfig pada setiap <b>client subnet 1</b>
+- Gresik <br>
+![3b](https://user-images.githubusercontent.com/61286109/100182706-d89b3f80-2f0f-11eb-9c75-4a0762500740.PNG) <br>
+- Sidoarjo <br>
+![3c](https://user-images.githubusercontent.com/61286109/100182812-14cea000-2f10-11eb-9356-83a6c5a3e862.PNG) <br>
 
 ## Nomer 4
 ### Soal
 Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
 ### Penyelesaian
+- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+![4](https://user-images.githubusercontent.com/61286109/100183850-99222280-2f12-11eb-956e-3bdae54880a9.PNG) <br>
+- Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
+### Testing
+- Jalankan ifconfig pada setiap <b>client subnet 3</b>
+- Banyuawangi <br>
+![4a](https://user-images.githubusercontent.com/61286109/100182950-5b23ff00-2f10-11eb-86ac-f73c74ce04f6.PNG) <br>
+- Madiun
+![4b](https://user-images.githubusercontent.com/61286109/100183400-688db900-2f11-11eb-9d49-ff16ea16e868.PNG) <br>
 
 ## Nomer 5
 ### Soal
