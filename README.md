@@ -58,7 +58,7 @@ Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100
 ![3a](https://user-images.githubusercontent.com/61286109/100183790-6f68fb80-2f12-11eb-9336-757446170d60.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
-- Jalankan ifconfig pada setiap <b>client subnet 1</b>
+- Jalankan `ifconfig` pada setiap <b>client subnet 1</b>
 - Gresik <br>
 ![3b](https://user-images.githubusercontent.com/61286109/100182706-d89b3f80-2f0f-11eb-9c75-4a0762500740.PNG) <br>
 - Sidoarjo <br>
@@ -72,16 +72,29 @@ Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
 ![4](https://user-images.githubusercontent.com/61286109/100183850-99222280-2f12-11eb-956e-3bdae54880a9.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
-- Jalankan ifconfig pada setiap <b>client subnet 3</b>
+- Jalankan `ifconfig` pada setiap <b>client subnet 3</b>
 - Banyuawangi <br>
 ![4a](https://user-images.githubusercontent.com/61286109/100182950-5b23ff00-2f10-11eb-86ac-f73c74ce04f6.PNG) <br>
-- Madiun
+- Madiun <br>
 ![4b](https://user-images.githubusercontent.com/61286109/100183400-688db900-2f11-11eb-9d49-ff16ea16e868.PNG) <br>
 
 ## Nomer 5
 ### Soal
 Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
 ### Penyelesaian
+- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+![5](https://user-images.githubusercontent.com/61286109/100184064-29f8fe00-2f13-11eb-91bc-fd670ee1b9f6.PNG) <br>
+- Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
+### Testing
+- Jalankan `cat /etc/resolv.conf` pada setiap <b>client</b>
+- Gresik <br>
+![5a](https://user-images.githubusercontent.com/61286109/100184269-b3a8cb80-2f13-11eb-8e3e-09212261af6c.PNG) <br>
+- Sidoarjo <br>
+![5b](https://user-images.githubusercontent.com/61286109/100184337-df2bb600-2f13-11eb-9181-2832884917b0.PNG) <br>
+- Banyuawangi <br>
+![5c](https://user-images.githubusercontent.com/61286109/100184436-1306db80-2f14-11eb-9859-59a802cb8f81.PNG) <br>
+- Madiun <br>
+![5d](https://user-images.githubusercontent.com/61286109/100184530-49445b00-2f14-11eb-87dd-71bdc372d24f.PNG) <br>
 
 ## Nomer 6
 ### Soal
