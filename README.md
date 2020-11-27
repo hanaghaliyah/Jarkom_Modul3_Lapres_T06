@@ -125,6 +125,7 @@ http_access allow USERS
 ```
 - Lakukan `service squid3 restart`
 - Ubah pengaturan proxy browser. Gunakan <b>IP MOJOKERTO</b> sebagai host, dan isikan <b>port 8080</b>.
+- Mengatur waktu dengan perintah `date --set "Tanggal Bulan Tahun Jam:Menit:Detik"`
 ### Testing
 ![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
 
@@ -151,8 +152,8 @@ Setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 
 ### Penyelesaian
 - Tambahkan baris pada file `nano /etc/squid3/acl.conf`
 ```
-acl AVAILABLE_WORKING time TWH 21:00-24:00
-acl AVAILABLE_WORKING time WHF 00:01-09:00
+acl AVAILABLE_WORKING2 time TWH 21:00-24:00
+acl AVAILABLE_WORKING3 time WHF 00:00-09:00
 ```
 - Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut jika belum:
 ```
@@ -169,6 +170,7 @@ visible_hostname mojokerto
 ### Soal
 Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Penyelesaian
+BELUM
 
 ## Nomer 11
 ### Soal
@@ -183,5 +185,6 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu M
 ### Soal
 Ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
 ### Penyelesaian
+Membuat Domain pada DNS Server
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
