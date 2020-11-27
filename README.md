@@ -134,17 +134,13 @@ http_access allow USERS
 Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ### Penyelesaian
 - Buat file baru `nano /etc/squid3/acl.conf`
-- Tambahkan baris `acl AVAILABLE_WORKING time TW 13:00-18:00`
-- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut:
-```
-include /etc/squid/acl.conf
-
-http_port 8080
-http_access allow AVAILABLE_WORKING
-http_access deny all
-visible_hostname mojokerto
-```
-- - Lakukan `service squid3 restart`
+- Tambahkan baris `acl AVAILABLE_WORKING time TW 13:00-18:00` <br>
+![8](https://user-images.githubusercontent.com/61286109/100478394-a101e280-311d-11eb-90c0-7a90b83efa3e.PNG) <br>
+- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut: <br>
+![8a](https://user-images.githubusercontent.com/61286109/100478591-4026da00-311e-11eb-9a49-3b9e87e51a31.PNG) <br>
+- Dan tambahkan `http_access allow AVAILABLE_WOORKING USERS` pada `/etc/squid3/squid.conf` <br>
+![8b](https://user-images.githubusercontent.com/61286109/100478765-c80ce400-311e-11eb-9327-66993b28d742.PNG) <br>
+- Lakukan `service squid3 restart`
 
 ## Nomer 9
 ### Soal
@@ -155,15 +151,13 @@ Setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 
 acl AVAILABLE_WORKING2 time TWH 21:00-24:00
 acl AVAILABLE_WORKING3 time WHF 00:00-09:00
 ```
-- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut jika belum:
+![9](https://user-images.githubusercontent.com/61286109/100478787-de1aa480-311e-11eb-8887-0ee7b88a7ad1.PNG) <br>
+- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut:
 ```
-include /etc/squid/acl.conf
-
-http_port 8080
-http_access allow AVAILABLE_WORKING
-http_access deny all
-visible_hostname mojokerto
+http_access allow AVAILABLE_WORKING2 USERS
+http_access allow AVAILABLE_WORKING2 USERS
 ```
+![9a](https://user-images.githubusercontent.com/61286109/100478891-33ef4c80-311f-11eb-9f77-f0f7af85be2e.PNG) <br>
 - Lakukan `service squid3 restart`
 
 ## Nomer 10
