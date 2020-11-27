@@ -186,5 +186,31 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu M
 Ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
 ### Penyelesaian
 Membuat Domain pada DNS Server
-
+- Lakukan perintah pada MALANG. Isikan seperti berikut:
+```
+nano /etc/bind/named.conf.local
+```
+- Isikan configurasi domain janganlupa-ta.t06.pw sesuai dengan syntax berikut:
+```
+zone "janganlupa-ta.t06.pw" {
+	type master;
+	file "/etc/bind/t06/janganlupa-ta.t06.pw";
+};
+```
+- Buat folder <b>t06</b> di dalam /etc/bind
+```
+mkdir /etc/bind/t06
+```
+- Copykan file db.local pada path /etc/bind ke dalam folder <b>t06</b> yang baru saja dibuat dan ubah namanya menjadi janganlupa-ta.t06.pw
+```
+cp /etc/bind/db.local /etc/bind/t06/janganlupa-ta.t06.pw
+```
+- Kemudian buka file janganlupa-ta.t06.pw dan edit seperti gambar berikut dengan IP MOJOKERTO
+```
+nano /etc/bind/t06/janganlupa-ta.t06.pw
+```
+- Restart bind9 dengan perintah
+```
+service bind9 restart
+```
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
