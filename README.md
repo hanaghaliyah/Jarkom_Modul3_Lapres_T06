@@ -137,8 +137,6 @@ Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 - Tambahkan baris `acl AVAILABLE_WORKING time TW 13:00-18:00` <br>
 ![8](https://user-images.githubusercontent.com/61286109/100478394-a101e280-311d-11eb-90c0-7a90b83efa3e.PNG) <br>
 - Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut: <br>
-![8a](https://user-images.githubusercontent.com/61286109/100478591-4026da00-311e-11eb-9a49-3b9e87e51a31.PNG) <br>
-- Dan tambahkan `http_access allow AVAILABLE_WOORKING USERS` pada `/etc/squid3/squid.conf` <br>
 ![8b](https://user-images.githubusercontent.com/61286109/100478765-c80ce400-311e-11eb-9327-66993b28d742.PNG) <br>
 - Lakukan `service squid3 restart`
 
