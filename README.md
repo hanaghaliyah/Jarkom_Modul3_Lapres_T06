@@ -189,6 +189,7 @@ zone "janganlupa-ta.t06.pw" {
 	file "/etc/bind/t06/janganlupa-ta.t06.pw";
 };
 ```
+![12a](https://user-images.githubusercontent.com/61286109/100479558-23d86c80-3121-11eb-9b15-be38f8481935.PNG) <br>
 - Buat folder <b>t06</b> di dalam /etc/bind
 ```
 mkdir /etc/bind/t06
@@ -201,6 +202,7 @@ cp /etc/bind/db.local /etc/bind/t06/janganlupa-ta.t06.pw
 ```
 nano /etc/bind/t06/janganlupa-ta.t06.pw
 ```
+![12](https://user-images.githubusercontent.com/61286109/100479308-62215c00-3120-11eb-9a20-ecafe2b085cc.PNG) <br>
 - Restart bind9 dengan perintah
 ```
 service bind9 restart
