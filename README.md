@@ -172,8 +172,9 @@ Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Testing
 [![Watch the video](https://img.youtube.com/vi/Myq17cuu9iI/0.jpg)](http://www.youtube.com/watch?v=Myq17cuu9iI)
 <br>
-[![SC2 Video](doc/SC2_youtube.PNG)](https://www.youtube.com/watch?v=Myq17cuu9iI "SC2 Mini game - Click to Watch!")
-[![SC2 Video](doc/SC2_youtube.gif)](https://www.youtube.com/watch?v=Myq17cuu9iI)
+[![SC2 Video](<img width="960" alt="10b" src="https://user-images.githubusercontent.com/26424136/100493959-4c875300-316f-11eb-9847-6b8d70276cf8.PNG">)](https://www.youtube.com/watch?v=Myq17cuu9iI "SC2 Mini game - Click to Watch!")
+<br>
+[![SC2 Video]<img width="960" alt="10b" src="https://user-images.githubusercontent.com/26424136/100493959-4c875300-316f-11eb-9847-6b8d70276cf8.PNG">](https://www.youtube.com/watch?v=Myq17cuu9iI)
 
 ## Nomer 11
 ### Soal
