@@ -169,8 +169,7 @@ http_access allow AVAILABLE_WORKING2 USERS
 Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Penyelesaian
 BELUM
-[![Watch the video](https://youtu.be/Myq17cuu9iI)]
-
+[![SC2 Video](https://img.youtube.com/vi/Myq17cuu9iI/0.jpg)](http://www.youtube.com/watch?v=Myq17cuu9iI)
 
 ## Nomer 11
 ### Soal
