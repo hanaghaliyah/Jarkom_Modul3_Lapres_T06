@@ -8,8 +8,6 @@ Kelompok T06
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Persiapan
-Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini: <br>
-![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Nomer 1
@@ -20,6 +18,8 @@ SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, s
 ### Penyelesaian
 - Pertama-tama, kami akan melakukan konfigurasi terlebih dahulu pada file <b>topologi.sh</b>
 ![Topologi](https://user-images.githubusercontent.com/61286109/100124518-57f82700-2eae-11eb-817f-011103f5aacb.PNG) <br>
+- Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. <br>
+![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
 - Pada router SURABAYA lakukan setting sysctl dengan mengetikkan perintah `nano /etc/sysctl.conf` Dan Hilangkan tanda pagar <b>(#)</b> pada bagian `net.ipv4.ip_forward=1` <br>
 <img width="366" alt="surabaya2" src="https://user-images.githubusercontent.com/26424136/99187024-bde5ff80-2786-11eb-8ef7-2b2c3ca18dae.PNG"> <br>
 Lalu ketikka `sysctl -p` untuk mengaktifkan perubahan yang ada. Dengan mengaktifkan fungsi IP Forward ini maka Linux nantinya dapat menentukan jalur mana yang dipilih untuk mencapai jaringan tujuan.
@@ -36,12 +36,15 @@ GRESIK (Sebagai Klien Subnet 1) <br>
 ![gsk](https://user-images.githubusercontent.com/61286109/100128366-c6d77f00-2eb2-11eb-948c-f99a86d02c47.PNG) <br>
 SIDOARJO (Sebagai Klien Subnet 1) <br>
 ![sda](https://user-images.githubusercontent.com/61286109/100131641-e40e4c80-2eb6-11eb-8f37-60bf47db1bde.PNG) <br>
-Banyuawangi (Sebagai Klien Subnet 3) <br>
+BANYUWANGI (Sebagai Klien Subnet 3) <br>
 ![bwi](https://user-images.githubusercontent.com/61286109/100133235-13be5400-2eb9-11eb-93fe-50c42af57252.PNG) <br>
-Madiun (Sebagai Klien Subnet 3) <br>
+MADIUN (Sebagai Klien Subnet 3) <br>
 ![mdi](https://user-images.githubusercontent.com/61286109/100133392-48321000-2eb9-11eb-8143-7b520b3d5338.PNG) <br>
-
-- Install DHCP Relay di Surabaya <br>
+- Kemudian lakukan `service networking restart` pada tiap uml.
+- Jalankan `iptables` pada uml SURABAYA dengan konfigurasi berikut
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.168.0.0/16
+```
 - Install DHCP Server di Tuban <br>
 ![dhcp server](https://user-images.githubusercontent.com/61286109/100180554-f87c3480-2f0a-11eb-8909-0840fc5bcbdf.PNG) <br>
 - Install Bind9 di Malang <br>
@@ -53,10 +56,22 @@ Madiun (Sebagai Klien Subnet 3) <br>
 ### Soal
 SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client. 
 ### Penyelesaian
+- Update <i>package lists</i> di router SURABAYA dengan perintah
+```
+apt-get update
+```
 - Install isc-dhcp-relay di router SURABAYA
+```
 apt-get install isc-dhcp-relay
-- nano /etc/default/isc-dhcp-relay
+```
+- Buka file konfigurasi interface dengan perintah `nano /etc/default/isc-dhcp-relay`
+```
+
+
 INTERFACES="eth1 eth2 eth3"
+```
+### TESTING
+<img width="366" alt="2" src="https://user-images.githubusercontent.com/26424136/100494552-6deb3d80-3175-11eb-82f7-1b050ad0368d.PNG">
 
 ## Nomer 3
 ### Soal
