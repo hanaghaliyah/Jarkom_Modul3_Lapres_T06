@@ -242,10 +242,10 @@ http_reply_access deny block
 ### Soal
 Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti gambar berikut:
 ### Penyelesaian
-- Pindah ke `cd /usr/share/squid/errors/en`
+- Pindah ke `cd /usr/share/squid/errors/en` <br>
 <img width="366" alt="11b" src="https://user-images.githubusercontent.com/26424136/100244780-e8477200-2f69-11eb-84f8-d01a22114306.PNG"> <br>
-- Kemudian `rm ERR_ACCESS_DENIED`
-- Download file <b>Error Page</b> dengan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED`
+- Kemudian `rm ERR_ACCESS_DENIED` <br>
+- Download file <b>Error Page</b> dengan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED` <br>
 <img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
 
 ### Testing
