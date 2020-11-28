@@ -15,7 +15,7 @@ Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematik
 ## Nomer 1
 ### Soal
 Membuat topologi jaringan <br>
-<img width="336" alt="Topologi" src="https://user-images.githubusercontent.com/26424136/100494207-2dd68b80-3172-11eb-81bb-ff6ca23a89a6.PNG"> <br>
+<img width="387" alt="Topologi" src="https://user-images.githubusercontent.com/26424136/100494290-fae0c780-3172-11eb-84e1-adb54e4486a2.PNG"> <br>
 SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. <br>
 ### Penyelesaian
 - Pertama-tama, kami akan melakukan konfigurasi terlebih dahulu pada file <b>topologi.sh</b>
