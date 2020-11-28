@@ -66,7 +66,7 @@ apt-get install isc-dhcp-relay
 ```
 - Buka file konfigurasi interface dengan perintah `nano /etc/default/isc-dhcp-relay`
 ```
-
+SERVERS="10.151.73.180" #IP TUBAN 
 
 INTERFACES="eth1 eth2 eth3"
 ```
@@ -75,17 +75,27 @@ INTERFACES="eth1 eth2 eth3"
 
 ## Nomer 3
 ### Soal
-Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah: <br>
-Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis. <br>
-(3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
 ### Penyelesaian
-- Buka `nano /etc/default/isc-dhcp-server` kemudian interface nya diganti `eth0` <br>
+- Update <i>package lists</i> di uml TUBAN dengan perintah
+```
+apt-get update
+```
+- Install isc-dhcp-server di uml TUBAN
+```
+apt-get install isc-dhcp-server
+```
+- Buka file konfigurasi interface dengan perintah `nano /etc/default/isc-dhcp-server`, kemudian interface nya diganti `eth0` <br>
 ![3](https://user-images.githubusercontent.com/61286109/100181594-337f6780-2f0d-11eb-8c6c-5d9c21b89334.PNG) <br>
-- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+- Buka `nano /etc/dhcp/dhcpd.conf`, kemudian ubah konfigurasinya
+```
+range 192.168.0.10 192.168.0.100;
+range 192.168.0.110 192.168.0.200;
+```
 ![3a](https://user-images.githubusercontent.com/61286109/100183790-6f68fb80-2f12-11eb-9336-757446170d60.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
-- Jalankan `ifconfig` pada setiap <b>client subnet 1</b>
+- Jalankan `ifconfig` pada setiap <b>client subnet 1</b> untuk mengetahui IP address.
 - Gresik <br>
 ![3b](https://user-images.githubusercontent.com/61286109/100182706-d89b3f80-2f0f-11eb-9c75-4a0762500740.PNG) <br>
 - Sidoarjo <br>
@@ -96,10 +106,13 @@ Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis. <br>
 Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
 ### Penyelesaian
 - Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+```
+range 192.168.1.50 192.168.1.70;
+```
 ![4](https://user-images.githubusercontent.com/61286109/100183850-99222280-2f12-11eb-956e-3bdae54880a9.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
-- Jalankan `ifconfig` pada setiap <b>client subnet 3</b>
+- Jalankan `ifconfig` pada setiap <b>client subnet 3</b> untuk mengetahui IP address.
 - Banyuawangi <br>
 ![4a](https://user-images.githubusercontent.com/61286109/100182950-5b23ff00-2f10-11eb-86ac-f73c74ce04f6.PNG) <br>
 - Madiun <br>
@@ -130,19 +143,42 @@ Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan cl
 - Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
 ![6](https://user-images.githubusercontent.com/61286109/100184810-e99a7f80-2f14-11eb-841c-0fbbe2747499.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
+### Testing
+IP berubah karena telah melewati waktu peminjaman. <br>
+<img width="365" alt="6a" src="https://user-images.githubusercontent.com/26424136/100494553-6fb50100-3175-11eb-9682-a1e9012906b4.PNG"> <br>
+<img width="366" alt="6b" src="https://user-images.githubusercontent.com/26424136/100494555-704d9780-3175-11eb-95da-14c0f6ab979e.PNG"> <br>
 
 ## Nomer 7
 ### Soal
 User autentikasi milik Anri memiliki format: <b>User: userta_t06 | Password: inipassw0rdta_t06</b>
 ### Penyelesaian
-- Lakukan `apt-get update` dan install `apache2-utils` pada UML MOJOKERTO.
-- Buat user dan password dengan syntax `htpasswd -c /etc/squid/passwd userta_t06` kemudian masukkan password yang diinginkan.
-- Edit konfigurasi pada `/etc/squid3/squid.conf`
+- Update <i>package lists</i> di UML MOJOKERTO dengan perintah
+```
+apt-get update
+```
+- Install squid pada UML MOJOKERTO
+```
+apt-get install squid
+```
+- Cek status squid untuk memastikan bahwa Squid telah berjalan dengan baik
+```
+service squid status
+```
+- Backup terlebih dahulu file konfigurasi default yang disediakan Squid.
+```
+mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
+```
+- Lakukan `apt-get update` dan install `apache2-utils` pada UML MOJOKERTO. Ketikkan:
+```
+apt-get install apache2-utils
+```
+- Buat user dan password dengan syntax `htpasswd -c /etc/squid/passwd userta_t06` kemudian masukkan password `inipassw0rdta_t06`.
+- Edit konfigurasi pada `/etc/squid/squid.conf`
 ```
 http_port 8080
 visible_hostname mojokerto
 
-auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
+auth_param basic program /usr/lib/squid/ncsa_auth /etc/squid/passwd
 auth_param basic children 5
 auth_param basic realm Proxy
 auth_param basic credentialsttl 2 hours
@@ -150,45 +186,61 @@ auth_param basic casesensitive on
 acl USERS proxy_auth REQUIRED
 http_access allow USERS
 ```
-- Lakukan `service squid3 restart`
-- Ubah pengaturan proxy browser. Gunakan <b>IP MOJOKERTO</b> sebagai host, dan isikan <b>port 8080</b>.
-- Mengatur waktu dengan perintah `date --set "Tanggal Bulan Tahun Jam:Menit:Detik"`
+<img width="366" alt="7" src="https://user-images.githubusercontent.com/26424136/100494556-70e62e00-3175-11eb-8a25-7afbf3b64032.PNG"> <br>
+- Lakukan `service squid restart`
+
 ### Testing
+- Ubah pengaturan proxy browser.
+- Akses web <b>google.com</b> dan akan muncul pop-up untuk login.
 ![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
 
 ## Nomer 8
 ### Soal
 Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ### Penyelesaian
-- Buat file baru `nano /etc/squid3/acl.conf`
-- Tambahkan baris `acl AVAILABLE_WORKING time TW 13:00-18:00` <br>
-![8](https://user-images.githubusercontent.com/61286109/100478394-a101e280-311d-11eb-90c0-7a90b83efa3e.PNG) <br>
-- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut: <br>
-![8b](https://user-images.githubusercontent.com/61286109/100479152-eb845e80-311f-11eb-9456-67d55a970779.PNG) <br>
-- Lakukan `service squid3 restart`
+- Buat file baru `nano /etc/squid/acl.conf`
+- Tambahkan baris `acl AVAILABLE_TA time TW 13:00-18:00` <br>
+<img width="369" alt="8b" src="https://user-images.githubusercontent.com/26424136/100494559-72175b00-3175-11eb-86c1-aca50fcdfadb.PNG"> <br>
+- Kemudian ke file `/etc/squid/squid.conf` dan tambahkan baris berikut: <br>
+<img width="367" alt="8" src="https://user-images.githubusercontent.com/26424136/100494558-717ec480-3175-11eb-8a71-05df4d4fcd3a.PNG"> <br>
+- Lakukan `service squid restart`
+### Testing
+- Atur waktu sesuai dengan waktu akses yang tersedia/digunakan dengan perintah 
+```
+date --set "Tanggal Bulan Tahun Jam:Menit:Detik"
+```
+- Akses web <b>google.com</b>
+![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
 
 ## Nomer 9
 ### Soal
 Setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 09.00).
 ### Penyelesaian
-- Tambahkan baris pada file `nano /etc/squid3/acl.conf`
+- Tambahkan baris pada file `nano /etc/squid/acl.conf`
 ```
-acl AVAILABLE_WORKING2 time TWH 21:00-24:00
-acl AVAILABLE_WORKING3 time WHF 00:00-09:00
+acl AVAILABLE_BIMBINGAN1 time TWH 21:00-24:00
+acl AVAILABLE_BIMBINGAN2 time WHF 00:00-09:00
 ```
-![9](https://user-images.githubusercontent.com/61286109/100478787-de1aa480-311e-11eb-8887-0ee7b88a7ad1.PNG) <br>
-- Kemudian ke file `/etc/squid3/squid.conf` dan tambahkan baris berikut:
+<img width="369" alt="9b" src="https://user-images.githubusercontent.com/26424136/100494561-73488800-3175-11eb-9a7c-61ab06e3facc.PNG"> <br>
+- Kemudian ke file `/etc/squid/squid.conf` dan tambahkan baris berikut:
 ```
-http_access allow AVAILABLE_WORKING2 USERS
-http_access allow AVAILABLE_WORKING2 USERS
+http_access allow AVAILABLE_BIMBINGAN1 USERS
+http_access allow AVAILABLE_BIMBINGAN2 USERS
 ```
-![9a](https://user-images.githubusercontent.com/61286109/100478891-33ef4c80-311f-11eb-9f77-f0f7af85be2e.PNG) <br>
-- Lakukan `service squid3 restart`
+<img width="366" alt="9" src="https://user-images.githubusercontent.com/26424136/100494560-72aff180-3175-11eb-991d-699cae2057af.PNG"> <br>
+- Lakukan `service squid restart`
 
 ## Nomer 10
 ### Soal
 Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Penyelesaian
+- Buka file `nano /etc/squid/squid.conf` dan tambahkan baris berikut:
+```
+acl block dstdomain google.com
+deny_info http://monta.if.its.ac.id block
+http_reply_access deny block
+```
+<img width="366" alt="10" src="https://user-images.githubusercontent.com/26424136/100494562-73488800-3175-11eb-9c76-e6fb3fe59606.PNG">
 
 ### Testing
 [![Watch the video](https://img.youtube.com/vi/Myq17cuu9iI/0.jpg)](http://www.youtube.com/watch?v=Myq17cuu9iI)
@@ -197,16 +249,30 @@ Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 ### Soal
 Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti gambar berikut:
 ### Penyelesaian
-<img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
+- Pindah ke `cd /usr/share/squid/errors/en`
 <img width="366" alt="11b" src="https://user-images.githubusercontent.com/26424136/100244780-e8477200-2f69-11eb-84f8-d01a22114306.PNG"> <br>
+- Kemudian `rm ERR_ACCESS_DENIED`
+- Download file <b>Error Page</b> dengan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED`
+<img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
+
 ### Testing
+Akses web diluar waktu yang telah ditentukan agar muncul halaman error. <br>
 ![Screenshot (257)](https://user-images.githubusercontent.com/26424136/100244857-001ef600-2f6a-11eb-88fd-f901c9a6bccb.png)
 
 ## Nomer 12
 ### Soal
 Ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
 ### Penyelesaian
-Membuat Domain pada DNS Server
+- Buka MALANG dan update <i>package lists</i> dengan menjalankan command:
+```
+apt-get update
+```
+Setalah melakukan update silahkan install aplikasi bind9 pada MALANG dengan perintah:
+```
+apt-get install bind9 -y
+```
+<br>
+<b>Membuat Domain pada DNS Server </b>
 - Lakukan perintah pada MALANG. Isikan seperti berikut:
 ```
 nano /etc/bind/named.conf.local
@@ -218,7 +284,6 @@ zone "janganlupa-ta.t06.pw" {
 	file "/etc/bind/t06/janganlupa-ta.t06.pw";
 };
 ```
-![12a](https://user-images.githubusercontent.com/61286109/100479558-23d86c80-3121-11eb-9b15-be38f8481935.PNG) <br>
 - Buat folder <b>t06</b> di dalam /etc/bind
 ```
 mkdir /etc/bind/t06
@@ -232,8 +297,30 @@ cp /etc/bind/db.local /etc/bind/t06/janganlupa-ta.t06.pw
 nano /etc/bind/t06/janganlupa-ta.t06.pw
 ```
 ![12](https://user-images.githubusercontent.com/61286109/100479308-62215c00-3120-11eb-9a20-ecafe2b085cc.PNG) <br>
+- Edit file <b>/etc/bind/named.conf.local</b> pada MALANG 
+```
+nano /etc/bind/named.conf.local
+```
+- Isikan configurasi domain janganlupa-ta.t06.pw sesuai dengan syntax berikut:
+```
+zone "73.151.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/t06/73.151.10.in-addr.arpa";
+};
+```
+![12a](https://user-images.githubusercontent.com/61286109/100479558-23d86c80-3121-11eb-9b15-be38f8481935.PNG) <br>
+- Copykan file db.local pada path /etc/bind ke dalam folder <b>t06</b> yang baru saja dibuat dan ubah namanya menjadi 73.151.10.in-addr.arpa
+```
+cp /etc/bind/db.local /etc/bind/t06/73.151.10.in-addr.arpa
+```
+- Edit file 71.151.10.in-addr.arpa menjadi seperti gambar di bawah ini
+GAMBAR ONGOING 
 - Restart bind9 dengan perintah
 ```
 service bind9 restart
 ```
-
+### Testing
+Ubah pengaturan proxy browser. Gunakan `janganlupa-ta.t06.pw` sebagai host, dan isikan port 8080. <br>
+![12](https://user-images.githubusercontent.com/26424136/100495266-48adfd80-317c-11eb-920e-c8acc7f452f5.jpg)
+- Kemudian akses web
+![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
