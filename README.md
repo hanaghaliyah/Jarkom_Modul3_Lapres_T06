@@ -7,15 +7,22 @@ Kelompok T06
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Persiapan
+Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini: <br>
+![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Nomer 1
 ### Soal
-Membuat topologi jaringan
+Membuat topologi jaringan <br>
+<img width="336" alt="Topologi" src="https://user-images.githubusercontent.com/26424136/100494207-2dd68b80-3172-11eb-81bb-ff6ca23a89a6.PNG"> <br>
+SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. <br>
 ### Penyelesaian
 - Pertama-tama, kami akan melakukan konfigurasi terlebih dahulu pada file <b>topologi.sh</b>
 ![Topologi](https://user-images.githubusercontent.com/61286109/100124518-57f82700-2eae-11eb-817f-011103f5aacb.PNG) <br>
 - Pada router SURABAYA lakukan setting sysctl dengan mengetikkan perintah `nano /etc/sysctl.conf` Dan Hilangkan tanda pagar <b>(#)</b> pada bagian `net.ipv4.ip_forward=1` <br>
 <img width="366" alt="surabaya2" src="https://user-images.githubusercontent.com/26424136/99187024-bde5ff80-2786-11eb-8ef7-2b2c3ca18dae.PNG"> <br>
-Lalu ketikka sysctl -p untuk mengaktifkan perubahan yang ada. Dengan mengaktifkan fungsi IP Forward ini maka Linux nantinya dapat menentukan jalur mana yang dipilih untuk mencapai jaringan tujuan.
+Lalu ketikka `sysctl -p` untuk mengaktifkan perubahan yang ada. Dengan mengaktifkan fungsi IP Forward ini maka Linux nantinya dapat menentukan jalur mana yang dipilih untuk mencapai jaringan tujuan.
 - Setting IP pada setiap UML dengan mengetikkan `nano /etc/network/interfaces` Lalu setting IPnya sebagai berikut: <br>
 SURABAYA (Sebagai Router dan DHCP Relay) <br>
 ![sby](https://user-images.githubusercontent.com/61286109/100125231-203daf00-2eaf-11eb-86ac-2a2c03567084.PNG) <br>
@@ -33,8 +40,7 @@ Banyuawangi (Sebagai Klien Subnet 3) <br>
 ![bwi](https://user-images.githubusercontent.com/61286109/100133235-13be5400-2eb9-11eb-93fe-50c42af57252.PNG) <br>
 Madiun (Sebagai Klien Subnet 3) <br>
 ![mdi](https://user-images.githubusercontent.com/61286109/100133392-48321000-2eb9-11eb-8143-7b520b3d5338.PNG) <br>
-- Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. Script file bernama bye.sh dapat dilihat melalui gambar dibawah ini: <br>
-![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG) <br>
+
 - Install DHCP Relay di Surabaya <br>
 - Install DHCP Server di Tuban <br>
 ![dhcp server](https://user-images.githubusercontent.com/61286109/100180554-f87c3480-2f0a-11eb-8909-0840fc5bcbdf.PNG) <br>
@@ -171,10 +177,6 @@ Setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
 
 ### Testing
 [![Watch the video](https://img.youtube.com/vi/Myq17cuu9iI/0.jpg)](http://www.youtube.com/watch?v=Myq17cuu9iI)
-<br>
-[![SC2 Video](<img width="960" alt="10b" src="https://user-images.githubusercontent.com/26424136/100493959-4c875300-316f-11eb-9847-6b8d70276cf8.PNG">)](https://www.youtube.com/watch?v=Myq17cuu9iI "SC2 Mini game - Click to Watch!")
-<br>
-[![SC2 Video]<img width="960" alt="10b" src="https://user-images.githubusercontent.com/26424136/100493959-4c875300-316f-11eb-9847-6b8d70276cf8.PNG">](https://www.youtube.com/watch?v=Myq17cuu9iI)
 
 ## Nomer 11
 ### Soal
@@ -219,4 +221,4 @@ nano /etc/bind/t06/janganlupa-ta.t06.pw
 ```
 service bind9 restart
 ```
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
