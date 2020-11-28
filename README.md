@@ -42,12 +42,6 @@ MADIUN (Sebagai Klien Subnet 3) <br>
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.168.0.0/16
 ```
-- Install DHCP Server di Tuban <br>
-![dhcp server](https://user-images.githubusercontent.com/61286109/100180554-f87c3480-2f0a-11eb-8909-0840fc5bcbdf.PNG) <br>
-- Install Bind9 di Malang <br>
-![bind9](https://user-images.githubusercontent.com/61286109/100180643-28c3d300-2f0b-11eb-94f3-fb1c93d63c1c.PNG) <br>
-- Install Squid3 di Mojokerto <br>
-![squid3](https://user-images.githubusercontent.com/61286109/100180916-c6b79d80-2f0b-11eb-9558-d2564bbb913f.PNG) <br>
 
 ## Nomer 2
 ### Soal
@@ -82,6 +76,7 @@ apt-get update
 ```
 apt-get install isc-dhcp-server
 ```
+![dhcp server](https://user-images.githubusercontent.com/61286109/100180554-f87c3480-2f0a-11eb-8909-0840fc5bcbdf.PNG) <br>
 - Buka file konfigurasi interface dengan perintah `nano /etc/default/isc-dhcp-server`, kemudian interface nya diganti `eth0` <br>
 ![3](https://user-images.githubusercontent.com/61286109/100181594-337f6780-2f0d-11eb-8c6c-5d9c21b89334.PNG) <br>
 - Buka `nano /etc/dhcp/dhcpd.conf`, kemudian ubah konfigurasinya
@@ -161,6 +156,7 @@ apt-get install squid
 ```
 service squid status
 ```
+![squid3](https://user-images.githubusercontent.com/61286109/100180916-c6b79d80-2f0b-11eb-9558-d2564bbb913f.PNG) <br>
 - Backup terlebih dahulu file konfigurasi default yang disediakan Squid.
 ```
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
@@ -268,6 +264,7 @@ Setalah melakukan update silahkan install aplikasi bind9 pada MALANG dengan peri
 ```
 apt-get install bind9 -y
 ```
+![bind9](https://user-images.githubusercontent.com/61286109/100180643-28c3d300-2f0b-11eb-94f3-fb1c93d63c1c.PNG) <br>
 <br>
 <b>Membuat Domain pada DNS Server </b>
 - Lakukan perintah pada MALANG. Isikan seperti berikut:
