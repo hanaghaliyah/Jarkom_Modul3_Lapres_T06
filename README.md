@@ -45,12 +45,18 @@ Madiun (Sebagai Klien Subnet 3) <br>
 
 ## Nomer 2
 ### Soal
-Surabaya menjadi DHCP Relay
+SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client. 
 ### Penyelesaian
+- Install isc-dhcp-relay di router SURABAYA
+apt-get install isc-dhcp-relay
+- nano /etc/default/isc-dhcp-relay
+INTERFACES="eth1 eth2 eth3"
 
 ## Nomer 3
 ### Soal
-Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah: <br>
+Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis. <br>
+(3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
 ### Penyelesaian
 - Buka `nano /etc/default/isc-dhcp-server` kemudian interface nya diganti `eth0` <br>
 ![3](https://user-images.githubusercontent.com/61286109/100181594-337f6780-2f0d-11eb-8c6c-5d9c21b89334.PNG) <br>
