@@ -105,7 +105,7 @@ range 192.168.1.50 192.168.1.70;
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
 - Jalankan `ifconfig` pada setiap <b>client subnet 3</b> untuk mengetahui IP address.
-- Banyuawangi <br>
+- Banyuwangi <br>
 ![4a](https://user-images.githubusercontent.com/61286109/100182950-5b23ff00-2f10-11eb-86ac-f73c74ce04f6.PNG) <br>
 - Madiun <br>
 ![4b](https://user-images.githubusercontent.com/61286109/100183400-688db900-2f11-11eb-9d49-ff16ea16e868.PNG) <br>
@@ -123,7 +123,7 @@ Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
 ![5a](https://user-images.githubusercontent.com/61286109/100184269-b3a8cb80-2f13-11eb-8e3e-09212261af6c.PNG) <br>
 - Sidoarjo <br>
 ![5b](https://user-images.githubusercontent.com/61286109/100184337-df2bb600-2f13-11eb-9181-2832884917b0.PNG) <br>
-- Banyuawangi <br>
+- Banyuwangi <br>
 ![5c](https://user-images.githubusercontent.com/61286109/100184436-1306db80-2f14-11eb-9859-59a802cb8f81.PNG) <br>
 - Madiun <br>
 ![5d](https://user-images.githubusercontent.com/61286109/100184530-49445b00-2f14-11eb-87dd-71bdc372d24f.PNG) <br>
