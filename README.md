@@ -132,7 +132,7 @@ Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
 ### Soal
 Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
 ### Penyelesaian
-- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya
+- Buka `nano /etc/dhcp/dhcpd.conf` kemudian ubah konfigurasinya pada `default-lease-time` diedit dalam satuan detik.
 ![6](https://user-images.githubusercontent.com/61286109/100184810-e99a7f80-2f14-11eb-841c-0fbbe2747499.PNG) <br>
 - Kemudian restart DHCP dengan syntax `service isc-dhcp-server restart`
 ### Testing
