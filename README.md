@@ -244,6 +244,7 @@ http_reply_access deny block
 <img width="366" alt="10" src="https://user-images.githubusercontent.com/26424136/100494562-73488800-3175-11eb-9c76-e6fb3fe59606.PNG">
 
 ### Testing
+Buka private browser dengan proxy yang sudah dijalankan, lalu akses `google.com`. Situs `google` langsung otomatis redirect ke situs `monta.if.its.ac.id`
 [![Watch the video](https://img.youtube.com/vi/Myq17cuu9iI/0.jpg)](http://www.youtube.com/watch?v=Myq17cuu9iI)
 
 ## Nomer 11
@@ -324,5 +325,5 @@ service bind9 restart
 ### Testing
 Ubah pengaturan proxy browser. Gunakan `janganlupa-ta.t06.pw` sebagai host, dan isikan port 8080. <br>
 <img width="543" alt="12" src="https://user-images.githubusercontent.com/26424136/100542506-d4a74e80-327c-11eb-9c5d-283312c69116.PNG">
-- Kemudian akses web
+- Kemudian akses web <br>
 ![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
