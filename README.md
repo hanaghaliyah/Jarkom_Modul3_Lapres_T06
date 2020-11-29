@@ -317,7 +317,7 @@ zone "73.151.10.in-addr.arpa" {
 cp /etc/bind/db.local /etc/bind/t06/73.151.10.in-addr.arpa
 ```
 - Buka file 73.151.10.in-addr.arpa dan edit menjadi seperti gambar di bawah ini
-<img width="397" alt="12b" src="https://user-images.githubusercontent.com/26424136/100542009-2f8b7680-327a-11eb-858f-ae4e21e302e9.PNG">
+<img width="397" alt="12b" src="https://user-images.githubusercontent.com/26424136/100542009-2f8b7680-327a-11eb-858f-ae4e21e302e9.PNG"> <br>
 - Restart bind9 dengan perintah
 ```
 service bind9 restart
