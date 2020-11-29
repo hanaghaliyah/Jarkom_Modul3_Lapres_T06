@@ -253,7 +253,7 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu M
 ### Penyelesaian
 - Pindah ke `cd /usr/share/squid/errors/en` <br>
 <img width="368" alt="11b" src="https://user-images.githubusercontent.com/26424136/100542089-9e68cf80-327a-11eb-99a0-c1a648254966.PNG"> <br>
-- Kemudian `rm ERR_ACCESS_DENIED` <br>
+- Kemudian hapus atau rename `ERR_ACCESS_DENIED` <br>
 - Download file <b>Error Page</b> dengan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED` <br>
 <img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
 
