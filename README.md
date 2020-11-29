@@ -14,7 +14,7 @@ Membuat topologi jaringan <br>
 SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. <br>
 ### Penyelesaian
 - Pertama-tama, kami akan melakukan konfigurasi terlebih dahulu pada file <b>topologi.sh</b>
-![Topologi](https://user-images.githubusercontent.com/61286109/100124518-57f82700-2eae-11eb-817f-011103f5aacb.PNG) <br>
+<img width="709" alt="Topologi" src="https://user-images.githubusercontent.com/26424136/100542894-8e9fba00-327f-11eb-8465-f45ce6370601.PNG"> <br>
 - Membuat script yang berisi `halt tiap uml` pada file <b>bye.sh</b> untuk mematikan setiap UML. <br>
 ![bye](https://user-images.githubusercontent.com/61286109/100133485-6ac42900-2eb9-11eb-8c18-5fefe92de51d.PNG)
 - Pada router SURABAYA lakukan setting sysctl dengan mengetikkan perintah `nano /etc/sysctl.conf` Dan Hilangkan tanda pagar <b>(#)</b> pada bagian `net.ipv4.ip_forward=1` <br>
