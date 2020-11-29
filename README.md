@@ -258,7 +258,7 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu M
 <img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
 
 ### Testing
-Akses web diluar waktu yang telah ditentukan agar muncul halaman error. <br>
+Jika terjadi error ataupun akses web diluar waktu yang telah ditentukan, maka muncul error page seperti dibawah ini. <br>
 ![Screenshot (257)](https://user-images.githubusercontent.com/26424136/100244857-001ef600-2f6a-11eb-88fd-f901c9a6bccb.png)
 
 ## Nomer 12
