@@ -3,8 +3,8 @@
 Modul 3 - DHCP dan Proxy Server <br>
 Kelompok T06
 1. Hana Ghaliyah Azhar  (05311840000032)
-2. Azmi                 (05311840000047) <br>
-<b>Asisten Individu:</b> Arino Jenynof
+2. Azmi                 (05311840000047) 
+<br><b>Asisten Individu:</b> Arino Jenynof
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Nomer 1
