@@ -266,6 +266,7 @@ Jika terjadi error ataupun akses web diluar waktu yang telah ditentukan, maka mu
 ### Soal
 Ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
 ### Penyelesaian
+- Sebelum menjalankan UML, ubah konfigurasi pada file VPN dan ambahkan `dhcp-option DNS "IP MALANG TIAP KELOMPOK"` di file .ovpn yang digunakan.
 - Buka MALANG dan update <i>package lists</i> dengan menjalankan command:
 ```
 apt-get update
