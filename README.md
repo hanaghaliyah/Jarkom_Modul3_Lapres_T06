@@ -201,8 +201,9 @@ Jadwal TA Selasa-Rabu pukul 13.00-18.00.
 ```
 date --set "Tanggal Bulan Tahun Jam:Menit:Detik"
 ```
-- Akses web <b>google.com</b>
-![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
+- Akses web pada waktu yang ditentukan, disini kami mengakses <b>its.ac.id</b>
+![Screenshot (270)](https://user-images.githubusercontent.com/26424136/100542498-c9542300-327c-11eb-87c7-4df53fd860a5.png)
+![Screenshot (271)](https://user-images.githubusercontent.com/26424136/100542501-cc4f1380-327c-11eb-8062-97bcc5a7745a.png)
 
 ## Nomer 9
 ### Soal
@@ -221,6 +222,14 @@ http_access allow AVAILABLE_BIMBINGAN2 USERS
 ```
 <img width="366" alt="9" src="https://user-images.githubusercontent.com/26424136/100494560-72aff180-3175-11eb-991d-699cae2057af.PNG"> <br>
 - Lakukan `service squid restart`
+### Testing
+- Atur waktu sesuai dengan waktu akses yang tersedia/digunakan dengan perintah 
+```
+date --set "Tanggal Bulan Tahun Jam:Menit:Detik"
+```
+- Akses web pada waktu yang ditentukan, disini kami mengakses <b>elearning.if.its.ac.id</b>
+![Screenshot (272)](https://user-images.githubusercontent.com/26424136/100542502-ce18d700-327c-11eb-97c9-bb5b651c5548.png)
+![Screenshot (273)](https://user-images.githubusercontent.com/26424136/100542503-ceb16d80-327c-11eb-93cf-c43c09093042.png)
 
 ## Nomer 10
 ### Soal
@@ -242,7 +251,7 @@ http_reply_access deny block
 Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti gambar berikut:
 ### Penyelesaian
 - Pindah ke `cd /usr/share/squid/errors/en` <br>
-<img width="366" alt="11b" src="https://user-images.githubusercontent.com/26424136/100244780-e8477200-2f69-11eb-84f8-d01a22114306.PNG"> <br>
+<img width="368" alt="11b" src="https://user-images.githubusercontent.com/26424136/100542089-9e68cf80-327a-11eb-99a0-c1a648254966.PNG"> <br>
 - Kemudian `rm ERR_ACCESS_DENIED` <br>
 - Download file <b>Error Page</b> dengan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED` <br>
 <img width="364" alt="11a" src="https://user-images.githubusercontent.com/26424136/100244764-e5e51800-2f69-11eb-9f68-b23922f67731.PNG"> <br>
@@ -306,14 +315,14 @@ zone "73.151.10.in-addr.arpa" {
 ```
 cp /etc/bind/db.local /etc/bind/t06/73.151.10.in-addr.arpa
 ```
-- Edit file 71.151.10.in-addr.arpa menjadi seperti gambar di bawah ini
-GAMBAR ONGOING 
+- Buka file 73.151.10.in-addr.arpa dan edit menjadi seperti gambar di bawah ini
+<img width="397" alt="12b" src="https://user-images.githubusercontent.com/26424136/100542009-2f8b7680-327a-11eb-858f-ae4e21e302e9.PNG">
 - Restart bind9 dengan perintah
 ```
 service bind9 restart
 ```
 ### Testing
 Ubah pengaturan proxy browser. Gunakan `janganlupa-ta.t06.pw` sebagai host, dan isikan port 8080. <br>
-![12](https://user-images.githubusercontent.com/26424136/100495266-48adfd80-317c-11eb-920e-c8acc7f452f5.jpg)
+<img width="543" alt="12" src="https://user-images.githubusercontent.com/26424136/100542506-d4a74e80-327c-11eb-9c5d-283312c69116.PNG">
 - Kemudian akses web
 ![Screenshot (258)](https://user-images.githubusercontent.com/26424136/100244877-03b27d00-2f6a-11eb-8486-9754d392f21b.png)
