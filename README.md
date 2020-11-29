@@ -156,7 +156,6 @@ apt-get install squid
 ```
 service squid status
 ```
-![squid3](https://user-images.githubusercontent.com/61286109/100180916-c6b79d80-2f0b-11eb-9558-d2564bbb913f.PNG) <br>
 - Backup terlebih dahulu file konfigurasi default yang disediakan Squid.
 ```
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
